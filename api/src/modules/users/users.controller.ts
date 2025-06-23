@@ -3,6 +3,7 @@ import {
     Body,
     ConflictException,
     Controller,
+    Headers,
     HttpCode,
     HttpStatus,
     Post,
@@ -26,7 +27,13 @@ export class UsersController {
     async addUser(
         @Body() payload: addUserRequest,
         @Res({ passthrough: true }) res: Response,
+        @Headers('authorization') authHeader: string,
     ): Promise<addUserResponse> {
+        const tokenExists = authHeader?.split(' ')[1];
+        if (tokenExists) {
+            throw new ConflictException('Пользователь уже зарегистрировался');
+        }
+
         if (!payload.login || !payload.password) {
             throw new BadRequestException('Нет логина или пароля');
         }

@@ -1,4 +1,4 @@
-FROM node as vite-app
+FROM node AS vite-app
 
 WORKDIR /app/client
 COPY . .

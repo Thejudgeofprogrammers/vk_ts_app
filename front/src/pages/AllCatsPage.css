@@ -1,0 +1,43 @@
+.cat-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 16px;
+    margin-top: 80px;
+}
+.cat-card {
+    width: 225px;
+    height: 225px;
+    border-radius: 2px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #fff;
+    transition: transform 0.2s;
+}
+
+.cat-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.7);
+}
+
+.cat-card button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.loading-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.loading {
+    font-size: 16px;
+    color: #555;
+    padding: 8px 16px;
+}
