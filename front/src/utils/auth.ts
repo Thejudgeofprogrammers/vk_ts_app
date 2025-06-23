@@ -1,4 +1,4 @@
-const TOKEN_KEY = 'auth_token';
+const TOKEN_KEY = 'x-auth-token';
 
 export const setAuthToken = (token: string) => {
     localStorage.setItem(TOKEN_KEY, token);

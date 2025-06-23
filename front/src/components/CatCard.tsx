@@ -11,10 +11,9 @@ export function CatCard({
     return (
         <div className='cat-card'>
             <img src={cat.imageUrl} alt={cat.name} className='cat-image' />
-            <h3>{cat.name}</h3>
             <button onClick={() => onToggleFavorite(cat.id)}>
-                {cat.isFavorite ? 'Убрать из любимых' : 'Добавить в любимые'}
+                {cat.isFavorite ? '❤️' : '🤍'}
             </button>
         </div>
-    )
+    );
 }

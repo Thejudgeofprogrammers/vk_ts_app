@@ -33,7 +33,7 @@ export class CatsController {
     @ApiResponse({ status: 200, description: 'Successful operation' })
     async getCatlikes(
         @Headers('authorization') authHeader: string,
-    ): Promise<{ data: LikeDTO[] }> {
+    ): Promise<{ likes: LikeDTO[] }> {
         const token = authHeader?.split(' ')[1];
         if (!token) {
             throw new UnauthorizedException('Пользователь не зарегистрирован');
@@ -46,7 +46,7 @@ export class CatsController {
         }
 
         return {
-            data: likes,
+            likes,
         };
     }
 
